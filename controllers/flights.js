@@ -16,7 +16,22 @@ function newFlight(req, res) {
   })
 }
 
+function create(req, res) {
+  // remove empty properties
+  for (const key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
+  Flight.create(req.body) 
+  .then(flight => {
+    res.redirect('/flights')
+  })
+  .catch(err => {
+    res.redirect('/flights')
+  })
+}
+
 export {
   index, 
-  newFlight as new
+  newFlight as new, 
+  create,
 }
