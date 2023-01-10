@@ -11,8 +11,11 @@ function index(req, res) {
 }
 
 function newFlight(req, res) {
+  const newFlight = new Flight()
+  const defaultDeparts = newFlight.departs
   res.render('flights/new', {
-    title: 'Add Flight'
+    title: 'Add Flight', 
+    defaultDeparts: defaultDeparts.toISOString().slice(0, 16)
   })
 }
 
