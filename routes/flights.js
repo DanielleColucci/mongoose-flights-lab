@@ -6,6 +6,9 @@ const router = Router()
 // GET /flights
 router.get('/', flightsCtrl.index)
 
+// GET /flights/new
+router.get('/new', flightsCtrl.new)
+
 export {
   router
 }
