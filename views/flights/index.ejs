@@ -11,6 +11,7 @@
         <th>Airport</th>
         <th>Flight Number</th>
         <th>Date</th>
+        <th>Time</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -20,7 +21,8 @@
           <td><%= flight.airline %></td>
           <td><%= flight.airport %></td>
           <td><a href="/flights/<%= flight._id %>"><%= flight.flightNo %></a></td>
-          <td><%= flight.date %></td>
+          <td><%= flight.departs.toISOString().slice(0, 10) %></td>
+          <td><%= flight.departs.toISOString().slice(11, 16) %></td>
           <td>
             <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
               <button type="submit">X</button>
