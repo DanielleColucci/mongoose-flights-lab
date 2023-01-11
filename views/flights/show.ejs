@@ -13,15 +13,27 @@
     <div><%= flight.flightNo %></div>
     <div>Departure Date: </div>
     <div><%= flight.departs.toDateString() %> at <%= flight.departs.toISOString().slice(11, 16) %></div>
-    <div>
-      <a href="/flights/<%= flight._id %>/edit">
-        <button>Edit Flight</button>
-      </a>
-      <a href="/flights">
-        <button>GO BACK</button>
-      </a>
-    </div>
   </section>
+  <div>
+    <a href="/flights/<%= flight._id %>/edit">
+      <button id="edit-button">Edit Flight</button>
+    </a>
+    <a href="/flights">
+      <button id="go-back-button">Go back</button>
+    </a>
+  </div>
+  <h2>Add a Ticket: </h2>
+  <form 
+    id="add-ticket-form" 
+    action="/flights/<%= flight._id %>/tickets" 
+    method="POST"
+  >
+    <label for="seat-input">Seat Number:</label>
+    <input id="seat-input" type="text" name="seat" required pattern="[A-F][1-9]\d?">
+    <label for="price-input">Price:</label>
+    <input id="price-input" type="number" name="price">
+    <button type="submit">Add Ticket</button>
+  </form>
 </main>
 
 <%- include('../partials/footer') %> 
