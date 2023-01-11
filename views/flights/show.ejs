@@ -34,6 +34,26 @@
     <input id="price-input" type="number" name="price">
     <button type="submit">Add Ticket</button>
   </form>
+  <% if (flight.tickets.length) { %> 
+    <table>
+      <thead>
+        <tr>
+          <th>Seat</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.tickets.forEach(ticket => { %>
+          <tr>
+            <td><%= ticket.seat %></td>
+            <td><%= ticket.price %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %> 
+    <h3>No tickets have been added</h3>
+  <% } %> 
 </main>
 
 <%- include('../partials/footer') %> 
