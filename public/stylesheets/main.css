@@ -14,10 +14,10 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #90bec7;
   /* Use a system font, if none are available use an available sans-sarif font */
   margin: 0;
-  color: #424748;
+  color: #226876;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
@@ -42,7 +42,7 @@ body > main h1:first-child {
 
 body > nav {
   grid-area: nav;
-  background-color: #b8c0c2;
+  background-color: #8ac6d5;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -60,16 +60,16 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  color: #424748;
+  color: #226876;
 }
 
 nav > a:visited {
-  color: #424748;
+  color: #226876;
 }
 
 nav > a:hover {
   color: white;
-  background-color: #424748;
+  background-color: #226876;
 }
 
 nav > a.active {

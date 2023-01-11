@@ -14,7 +14,7 @@ table {
 
 table thead th {
   padding: 5px;
-  border-bottom: 2px solid #424748;
+  border-bottom: 2px solid #226876;
 }
 
 table td {
@@ -25,6 +25,7 @@ table td {
 form * {
   padding: 5px;
   border-radius: 5px;
+  border-color: #226876;
 }
 
 section {
@@ -57,4 +58,5 @@ section div:nth-child(even) {
   margin: 16px;
   padding: 5px;
   border-radius: 5px;
+  border-color: #226876;
 }
