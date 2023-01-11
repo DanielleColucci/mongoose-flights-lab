@@ -6,7 +6,8 @@
   <p>Please make sure the meal is not listed below</p>
   <form action="" method="POST">
     <label for="name-input">Meal Name:</label>
-    <input type="text" name="name" id="name-input" required>
+    <input type="text" name="name" id="name-input" required autocomplete="off">
+    <button type="submit">Add Meal</button>
   </form>
   <ul>
     <% meals.forEach(meal => { %>
