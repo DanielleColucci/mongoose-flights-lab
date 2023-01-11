@@ -18,6 +18,7 @@
     <a href="/flights/<%= flight._id %>/edit">
       <button id="edit-button">Edit Flight</button>
     </a>
+    <br>
     <a href="/flights">
       <button id="go-back-button">Go back</button>
     </a>
@@ -27,6 +28,7 @@
     id="add-ticket-form" 
     action="/flights/<%= flight._id %>/tickets" 
     method="POST"
+    autocomplete="off"
   >
     <label for="seat-input">Seat Number:</label>
     <input id="seat-input" type="text" name="seat" required pattern="[A-F][1-9]\d?">

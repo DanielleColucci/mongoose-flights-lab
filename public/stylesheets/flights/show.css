@@ -60,3 +60,7 @@ section div:nth-child(even) {
   border-radius: 5px;
   border-color: #226876;
 }
+
+#go-back-button {
+  margin-top: 0;
+}
