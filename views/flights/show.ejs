@@ -13,7 +13,21 @@
     <div><%= flight.flightNo %></div>
     <div>Departure Date: </div>
     <div><%= flight.departs.toDateString() %> at <%= flight.departs.toISOString().slice(11, 16) %></div>
+    <div>Meals: </div>
+    <ul>
+      <% flight.meals.forEach(meal => { %>
+        <li><%= meal.name %></li>
+      <% }) %>
+    </ul>
   </section>
+  <form action="/flights/<%= flight._id %>/meals">
+    <select name="mealId">
+      <% meals.forEach(meal => { %>
+        <option value="<%= meal._id %>"><%= meal.name %></option>
+      <% }) %>
+    </select>
+    <button id="add-meal-button" type="submit">Add Meal to Flight</button>
+  </form>
   <div>
     <a href="/flights/<%= flight._id %>/edit">
       <button id="edit-button">Edit Flight</button>

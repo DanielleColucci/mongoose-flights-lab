@@ -64,3 +64,7 @@ section div:nth-child(even) {
 #go-back-button {
   margin-top: 0;
 }
+
+#add-meal-button {
+  margin-top: 16px;
+}

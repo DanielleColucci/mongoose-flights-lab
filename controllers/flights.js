@@ -1,4 +1,5 @@
 import { Flight } from '../models/flight.js'
+import { Meal } from '../models/meal.js'
 
 function index(req, res) {
   Flight.find({})
@@ -45,14 +46,22 @@ function deleteFlight(req, res) {
 
 function show(req, res) {
   Flight.findById(req.params.id)
+  .populate('meals')
   .then(flight => {
-    res.render('flights/show', {
-      flight: flight, 
-      title: 'Flight Details'
+    Meal.find({})
+    .then(meals => {
+      res.render('flights/show', {
+        flight: flight, 
+        meals,
+        title: 'Flight Details'
+      })
+    })
+    .catch(err => {
+      res.redirect('/flights')
     })
   })
   .catch(err => {
-    res.redirect('/')
+    res.redirect('/flights')
   })
 }
 
