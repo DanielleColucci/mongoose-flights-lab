@@ -10,11 +10,11 @@ const ticketSchema = new Schema({
 const flightSchema = new Schema({
   airline: {
     type: String, 
-    enum: ['American', 'Southwest', 'United']
+    enum: ['American', 'Southwest', 'United', 'Delta', 'Frontier', 'JetBlue']
   }, 
   airport: {
     type: String, 
-    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN', 'BOS', 'PHX', 'ORD', 'ATL', 'MIA', 'SEA'],
     default: 'DEN'},
   flightNo: {type: Number, min: 10, max: 9999, required: true},
   departs: {

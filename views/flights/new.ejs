@@ -14,9 +14,15 @@
       <option value="DFW">DFW</option>
       <option value="LAX">LAX</option>
       <option value="SAN">SAN</option>
+      <option value="BOS">BOS</option>
+      <option value="PHX">PHX</option>
+      <option value="ORD">ORD</option>
+      <option value="ATL">ATL</option>
+      <option value="MIA">MIA</option>
+      <option value="SEA">SEA</option>
     </select>
     <label for="flight-no-input">Flight Number:</label>
-    <input type="number" name="flightNo" id="flight-no-input">
+    <input type="number" name="flightNo" id="flight-no-input" required>
     <label for="departs-input">Departure Date:</label>
     <input type="datetime-local" name="departs" id="departs-input" value="<%= defaultDeparts %>">
     <button type="submit">Add Flight</button>
